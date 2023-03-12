@@ -6,6 +6,7 @@ public class Car {
         startElectricity();
         startCommand();
         startFuelSystem();
+        System.out.println("Engine is started.");
 
     }
 

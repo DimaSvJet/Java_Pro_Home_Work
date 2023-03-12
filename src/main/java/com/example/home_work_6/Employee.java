@@ -1,22 +1,22 @@
 package com.example.home_work_6;
 
 public class Employee {
-    private String yorName;
+    private String fullName;
     private String position;
     private String eMail;
-    private int tel;
+    private int phoneNumber;
     private int age;
 
-    public Employee(String yorName, String position, String eMail, int tel, int age) {
-        this.yorName = yorName;
+    public Employee(String fullName, String position, String eMail, int phoneNumber, int age) {
+        this.fullName = fullName;
         this.position = position;
         this.eMail = eMail;
-        this.tel = tel;
+        this.phoneNumber = phoneNumber;
         this.age = age;
     }
 
-    public String getYorName() {
-        return yorName;
+    public String getFullName() {
+        return fullName;
     }
 
     public String getPosition() {
@@ -27,16 +27,16 @@ public class Employee {
         return eMail;
     }
 
-    public int getTel() {
-        return tel;
+    public int getPhoneNumber() {
+        return phoneNumber;
     }
 
     public int getAge() {
         return age;
     }
 
-    public void setYorName(String yorName) {
-        this.yorName = yorName;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public void setPosition(String position) {
@@ -47,8 +47,8 @@ public class Employee {
         this.eMail = eMail;
     }
 
-    public void setTel(int tel) {
-        this.tel = tel;
+    public void setPhoneNumber(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public void setAge(int age) {
@@ -58,10 +58,10 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee{" +
-                "yorName='" + yorName + '\'' +
+                "fullName='" + fullName + '\'' +
                 ", position='" + position + '\'' +
                 ", eMail='" + eMail + '\'' +
-                ", tel=" + tel +
+                ", phoneNumber=" + phoneNumber +
                 ", age=" + age +
                 '}';
     }
