@@ -43,43 +43,34 @@ public class Main {
         System.out.println(treadmill1);
         System.out.println(wall1);
 
-        Member[] m = {human1, robotic1, cat1};
-        Obstacle[] o = {treadmill1, wall1};
+        var members = Arrays.asList(human1, robotic1, cat1);
+        var obstacles = Arrays.asList(treadmill1, wall1);
 
-//        var members = Arrays.asList(human1, robotic1, cat1);
-//        var obstacles = Arrays.asList(treadmill1, wall1);
-//
-//        for (Obstacle o: obstacles) {
-//            for (Member m: members) {
-//                if (m.getRun() >= o.getDistance()) {
-//
-//
-//            } else {members.remove(i);}
-//
-//        }
-
-
-        for (int i = 0; i < o.length; i++) {
-            for (int j = 0; j < m.length; j++) {
-                if (m[i] != null) {
-                    if (m[i].getRun() >= o[j].getDistance())  {
-                        System.out.println(m[i].getName() + " has passed the obstacle " + o[j].getName());
-
-//                        if (m[i].getJump() >= o[j].getHight()) {
-//                            System.out.println(m[i].getName() + " passed the obstacle " + o[j].getName());
-//                        } else {
-//                            System.out.println(m[i].getName() + " don't passed the obstacle " + o[j].getName());
-//                            m[i] = null;
-//                        }
+        for (Member m : members) {
+            for (Obstacle o : obstacles) {
+                if (obstacles.indexOf(o) == 0) {
+                    if (m.getRun() >= o.getDistance()) {
+                        System.out.println(m.getName() + " has passed " + o.getName() + " " + o.getDistance());
                     } else {
-                        System.out.println(m[i].getName() + " didn't pass the obstacle " + o[j].getName());
-                        m[i] = null;
+                        m.setStatus(false);
+                        System.out.println(m.getName() + " could not pass " + o.getName() + " " + o.getDistance() +
+                                " and get out of the competition");
+                    }
+                } else if ((obstacles.indexOf(o) == 1) && (m.isStatus() == true)) {
+                    if (m.getJump() >= o.getHight()) {
+                        System.out.println(m.getName() + " has passed " + o.getName() + " " + o.getHight());
+                    } else {
+                        System.out.println(m.getName() + " could not pass " + o.getName() + " " + o.getHight());
                     }
                 }
             }
+
         }
+
     }
 }
+
+
 
 
 

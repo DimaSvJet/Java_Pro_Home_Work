@@ -5,11 +5,13 @@ public abstract class Member {
     private String name;
     private int run;
     private int jump;
+    private boolean status;
 
     public Member(String name, int run, int jump) {
         this.name = name;
         this.run = run;
         this.jump = jump;
+        this.status = true;
     }
 
     public String getName() {
@@ -34,6 +36,14 @@ public abstract class Member {
 
     public void setJump(int jump) {
         this.jump = jump;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
     public void run() {
